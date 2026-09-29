@@ -1,0 +1,13 @@
+<html>
+<head>
+<title>mainpage</title>
+</head>
+<body bgcolor="lightgreen"><center>
+<h1>main Page</h1><br>
+<p>Time table:
+<a href="/home/ksb/shahan2026/html/exp2/timetable.html">Click here fpr timetable</a><p><br>
+<p>Photo:    
+<a href="/home/ksb/shahan2026/html/exp2/img.html">click here for view photos</a></p></center>
+</body>
+</html>
+
