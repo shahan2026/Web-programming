@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>
+Javascript Strings and Math functions</title>
+</head>
+<body bgcolor="lightgrey">
+<h1><center>JavaScript Strings and Math Functions</center></h1>
+<h3><font color="red">1.String Functions</font></h3>
+<script>
+let a = prompt("Enter the first string:");
+let b = prompt("Enter the second string:");
+document.write(`String a : ${a}<br>`);
+document.write(`String b : ${b}<br>`);
+document.write(`length of a : ${a.length}<br>`);
+document.write(`Uppercase of a : ${a.toUpperCase()}<br>`);
+document.write(`Lowercase of a : ${a.toLowerCase()}<br>`);
+document.write(`Character of Position (3) in a : ${a.charAt(3)}<br>`);
+document.write(`Concatenation : ${a.concat(" ",b)}<br>`);
+document.write(`Slicing (1,4) of a: ${a.slice(1,4)}<br>`);
+let oldWord = prompt("Enter the word to replace:");
+let newWord = prompt("Enter the new word:");
+document.write(`Replace : ${a.replace(oldWord,newWord)}<br>`);
+</script>
+<hr>
+<h3><font color="red">2.Math Object Functions</font></h3>
+<script>
+let x = parseFloat(prompt("Enter a number:"));
+document.write(`Number : ${x}<br>`);
+document.write(`Square Root : ${Math.sqrt(x)}<br>`);
+document.write(`Random Value : ${Math.random()}<br>`);
+document.write(`Power to 3 : ${Math.pow(x,2)}<br>`);
+document.write(`Absolute Value : ${Math.abs(x)}<br>`);
+document.write(`Round Value : ${Math.round(x)}<br>`);
+document.write(`Ceil Value : ${Math.ceil(x)}<br>`);
+document.write(`Floor Value : ${Math.floor(x)}<br>`);
+document.write(`Pi Value : ${Math.PI}<br>`);
+document.write(`Max Value in (2,5,9): ${Math.max(2,5,9)}<br>`);
+document.write(`Min Value in (2,5,9): ${Math.min(2,5,9)}<br>`);
+</script>
+</body>
+</html>
