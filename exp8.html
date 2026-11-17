@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        .container {
+            width: 350px;
+            margin: 50px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+        h2 {
+            text-align: center;
+            color: blue;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkblue;
+        }
+        #message {
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Registration Form</h2>
+
+    <form id="regForm" onsubmit="return validateForm()">
+        <label>Full Name:</label>
+        <input type="text" id="name" placeholder="Enter your name">
+        <label>Email:</label>
+        <input type="text" id="email" placeholder="Enter your email">
+        <label>Password:</label>
+        <input type="password" id="password" placeholder="Enter password">
+        <label>Confirm Password:</label>
+        <input type="password" id="confirmPassword"
+        placeholder="Confirm password">
+        <label>Phone Number:</label>
+        <input type="text" id="phone" placeholder="Enter phone number">
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female
+        <br><br>
+        <button type="submit">Register</button>
+        <p id="message"></p>
+    </form>
+</div>
+<script>
+function validateForm() {
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value;
+    let confirmPassword =
+        document.getElementById("confirmPassword").value;
+    let phone = document.getElementById("phone").value.trim();
+    let message = document.getElementById("message");
+    // Name validation
+    if (name == "") {
+        alert("Please enter your name");
+        return false;
+    }
+    // Email validation
+    let emailPattern = /^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]+$/;
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email");
+        return false;
+    }
+    // Password validation
+    if (password.length < 6) {
+        alert("Password must contain at least 6 characters");
+        return false;
+    }
+    // Confirm password validation
+    if (password != confirmPassword) {
+        alert("Passwords do not match");
+        return false;
+    }
+    // Phone number validation
+    let phonePattern = /^[0-9]{10}$/;
+    if (!phonePattern.test(phone)) {
+        alert("Please enter a valid 10-digit phone number");
+        return false;
+    }
+    // Gender validation
+    let gender = document.querySelector(
+        'input[name="gender"]:checked'
+    );
+    if (!gender) {
+        alert("Please select your gender");
+        return false;
+    }
+    message.style.color = "green";
+    message.innerHTML = "Registration Successful!";
+    return false;
+}
+</script>
+</body>
+</html>
